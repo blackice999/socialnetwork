@@ -13,6 +13,9 @@
 <?php
 
 include "menu.php";
+include "config.php";
+include "Model/Mysql.php";
+
 
 //if(!isset($_SESSION['userId'])) {
 ?>
