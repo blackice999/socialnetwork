@@ -17,7 +17,7 @@ include "config.php";
 include "Model/Mysql.php";
 
 
-//if(!isset($_SESSION['userId'])) {
+if (!isset($_SESSION['userId'])) {
 ?>
 <div class="row">
     <div class="large-6 columns float-right">
@@ -96,3 +96,24 @@ include "Model/Mysql.php";
 </div>
 </body>
 </html>
+<?php } else { ?>
+    <h2> Add a new article</h2>
+    <form method="post" action="article.php">
+        <label>
+            Content
+            <textarea rows="4" cols="50" name="content"></textarea>
+        </label>
+        <label>
+            Category
+            <select name="category_id">
+
+                <!--            To fill out with category data-->
+                <option value="1">Sport</option>
+            </select>
+        </label>
+
+        <input type="hidden" name="user_id" value="<?php echo $_SESSION['userId']; ?>">
+
+        <input type="submit" class="button" name="new_article" value="Post new article">
+    </form>
+<?php } ?>
