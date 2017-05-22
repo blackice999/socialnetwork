@@ -12,13 +12,14 @@ namespace Model;
 class UtilizatorModel
 {
 
-    public static function loadById(string $tableName, array $data)
+    public static function loadById(int $id)
     {
-        return Mysql::getOne($tableName, $data);
+        return Mysql::getOne("snUtilizator", ['id' => $id]);
     }
 
-    public static function loadByName(string $tableName, array $data) {
-        return Mysql::getOne($tableName, $data);
+    public static function loadByAlias(string $name)
+    {
+        return Mysql::getOne("snUtilizator", ["nume" => $name]);
     }
 
     public static function create(string $name, string $alias, string $dateOfBirth, string $address, string $userId = NULL)
@@ -45,11 +46,12 @@ class UtilizatorModel
         return $result;
     }
 
-    public static function userExists(string $name) {
+    public static function userExists(string $alias): bool
+    {
         try {
-            self::loadById("snUtilizator", ["nume" => $name]);
+            self::loadByAlias($alias);
             return true;
-        } catch(NoResultsException $e) {
+        } catch (NoResultsException $e) {
             return false;
         }
     }

@@ -25,7 +25,7 @@ include "Model/Mysql.php";
         <form method="post" action="login.php">
             <label>
                 Alias
-                <input type="text" name="name">
+                <input type="text" name="alias">
             </label>
             <label>
                 Password
@@ -74,8 +74,8 @@ include "Model/Mysql.php";
             <label>
                 Gender
                 <select name="gender">
-                    <option value="Feminin">Male</option>
-                    <option value="Masculin">Female</option>
+                    <option value="Masculin">Male</option>
+                    <option value="Feminin">Female</option>
                 </select>
             </label>
 

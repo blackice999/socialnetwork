@@ -32,13 +32,8 @@ class UtilizatorDatePersonaleModel
         return $result;
     }
 
-    public static function userExists(string $name)
+    public static function loadByUtilizatorId(int $utilizatorId)
     {
-        try {
-            self::loadById("snUtilizator", ["nume" => $name]);
-            return true;
-        } catch (NoResultsException $e) {
-            return false;
-        }
+        return Mysql::getOne("snUtilizator_date_personale", ['id_utilizator' => $utilizatorId]);
     }
 }
