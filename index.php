@@ -74,8 +74,8 @@ include "Model/Mysql.php";
             <label>
                 Gender
                 <select name="gender">
-                    <option value="male">Male</option>
-                    <option value="male">Female</option>
+                    <option value="Feminin">Male</option>
+                    <option value="Masculin">Female</option>
                 </select>
             </label>
 

@@ -8,7 +8,6 @@
 
 namespace Utils;
 
-
 class StringUtils
 {
     public static function sanitizeString(string $string)
@@ -16,7 +15,7 @@ class StringUtils
         return filter_var($string, FILTER_SANITIZE_STRING);
     }
 
-    public function encryptPassword(string $password)
+    public static function encryptPassword(string $password)
     {
         return password_hash($password, PASSWORD_BCRYPT);
     }
