@@ -31,7 +31,6 @@ include "Model/Exceptions/NoResultsException.php";
 include "Model/Exceptions/ConnectionException.php";
 include "Model/UtilizatorModel.php";
 include "Model/UtilizatorDatePersonaleModel.php";
-session_start();
 
 $errors = [];
 
