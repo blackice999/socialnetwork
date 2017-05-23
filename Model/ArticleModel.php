@@ -16,6 +16,10 @@ class ArticleModel
         return Mysql::getOne("snArticol", ['id' => $id]);
     }
 
+    public static function getAllArticlesByUserId(int $userId) {
+        return Mysql::getAll("snArticol", ['id_utilizator' => $userId]);
+    }
+
     public static function loadByAlias(string $name)
     {
         return Mysql::getOne("snArticol", ["nume" => $name]);

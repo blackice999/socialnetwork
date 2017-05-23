@@ -15,6 +15,7 @@
 include "menu.php";
 include "config.php";
 include "Model/Mysql.php";
+include "Model/ArticleModel.php";
 
 
 if (!isset($_SESSION['userId'])) {
@@ -116,4 +117,23 @@ if (!isset($_SESSION['userId'])) {
 
         <input type="submit" class="button" name="new_article" value="Post new article">
     </form>
-<?php } ?>
+
+    <h2> Your articles</h2>
+    <?php
+    if (empty(\Model\ArticleModel::getAllArticlesByUserId($_SESSION['userId']))) {
+        echo "<p>No articles found</p>";
+    } else {
+        ?>
+
+        <?php foreach (\Model\ArticleModel::getAllArticlesByUserId($_SESSION['userId']) as $article) { ?>
+            <div class="callout ">
+                <small><p><?php echo $article['data']; ?></p></small>
+
+                <div class="callout secondary">
+                    <p> <?php echo $article['continut']; ?></p>
+                </div>
+            </div>
+        <?php } ?>
+        </table>
+    <?php }
+} ?>
