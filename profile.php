@@ -81,7 +81,7 @@ if (isset($_POST['edit'])) {
     </div>
     <div class="large-6 columns">
         <h2> Edit data</h2>
-        <form method="post" action="edit_user.php">
+        <form method="post" action="profile.php">
 
             <label>
                 Alias
@@ -105,7 +105,7 @@ if (isset($_POST['edit'])) {
             <input type="submit" class="button" value="Edit" name="edit">
         </form>
 
-        <h2>Add a friend  by email</h2>
+        <h2>Add a friend by email</h2>
         <form method="post" action="add_friend.php">
             <label>
                 Friend's email

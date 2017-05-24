@@ -11,7 +11,7 @@
 
                 $user = \Model\UtilizatorModel::loadById($_SESSION['userId']);
                 $userName = $user['nume'];
-                echo "<li><a href='edit_user.php'>" . $userName . "</a></li>";
+                echo "<li><a href='profile.php'>" . $userName . "</a></li>";
             }
             ?>
         </ul>

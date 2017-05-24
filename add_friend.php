@@ -27,6 +27,6 @@ if (isset($_POST['add_friend'])) {
         }
     } else {
         \Model\PrieteniModel::create($_SESSION['userId'], $friendModel['id_utilizator']);
-        header("Location: edit_user.php");
+        header("Location: profile.php");
     }
 }
