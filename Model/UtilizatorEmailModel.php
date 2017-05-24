@@ -16,6 +16,11 @@ class UtilizatorEmailModel
         return Mysql::getOne($tableName, $data);
     }
 
+    public static function loadByEmail(string $email)
+    {
+        return Mysql::getOne("snUtilizator_email", ['email' => $email]);
+    }
+
     public static function loadByName(string $tableName, array $data)
     {
         return Mysql::getOne($tableName, $data);

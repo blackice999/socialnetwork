@@ -45,7 +45,7 @@ if (isset($_POST['login'])) {
     }
 
 
-    $userModel = \Model\UtilizatorModel::loadByAlias($alias);
+    $userModel = \Model\UtilizatorModel::loadByName($alias);
     $userDatePersonaleModel = \Model\UtilizatorDatePersonaleModel::loadByUtilizatorId($userModel['id']);
 
     if (!password_verify($password, $userDatePersonaleModel['parola'])) {

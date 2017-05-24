@@ -104,5 +104,14 @@ if (isset($_POST['edit'])) {
             </label>
             <input type="submit" class="button" value="Edit" name="edit">
         </form>
+
+        <h2>Add a friend  by email</h2>
+        <form method="post" action="add_friend.php">
+            <label>
+                Friend's email
+                <input type="text" name="email">
+            </label>
+            <input type="submit" class="button" value="Add friend" name="add_friend">
+        </form>
 </body>
 </html>

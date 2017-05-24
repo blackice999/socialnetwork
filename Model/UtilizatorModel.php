@@ -17,7 +17,7 @@ class UtilizatorModel
         return Mysql::getOne("snUtilizator", ['id' => $id]);
     }
 
-    public static function loadByAlias(string $name)
+    public static function loadByName(string $name)
     {
         return Mysql::getOne("snUtilizator", ["nume" => $name]);
     }
@@ -49,7 +49,7 @@ class UtilizatorModel
     public static function userExists(string $alias): bool
     {
         try {
-            self::loadByAlias($alias);
+            self::loadByName($alias);
             return true;
         } catch (NoResultsException $e) {
             return false;
