@@ -129,9 +129,11 @@ if (!isset($_SESSION['userId'])) {
     } else {
         ?>
 
-        <?php foreach (\Model\ArticleModel::getAllArticlesByUserId($_SESSION['userId']) as $article) { ?>
+        <?php foreach (\Model\ArticleModel::getAllArticlesByUserId($_SESSION['userId']) as $article) {
+                $categoryName = \Model\CategorieModel::loadById($article['id_categorie'])['categorie'];
+            ?>
             <div class="callout ">
-                <small><p><?php echo $article['data']; ?></p></small>
+                <small><p><?php echo $article['data']; ?> | Category: <?php echo ucfirst($categoryName); ?></p></small>
 
                 <div class="callout secondary">
                     <p> <?php echo $article['continut']; ?></p>
