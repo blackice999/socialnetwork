@@ -93,8 +93,7 @@ if (!isset($_SESSION['userId'])) {
 
     </div>
 </div>
-</body>
-</html>
+
 <?php } else { ?>
 
     <?php
@@ -139,6 +138,8 @@ if (!isset($_SESSION['userId'])) {
                 </div>
             </div>
         <?php } ?>
-        </table>
     <?php }
 } ?>
+
+</body>
+</html>
