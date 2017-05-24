@@ -89,7 +89,20 @@ class Mysql
         self::query($sql);
 
         return self::getConnection()->insert_id;
+    }
 
-
+    public static function update(string $tableName, array $data, array $where)
+    {
+        $sql = "UPDATE `" . $tableName . "` SET ";
+        foreach ($data as $columnName => $columnValue) {
+            $sql .= '`' . $columnName . '` = "' . self::getConnection()->escape_string($columnValue) . '",';
+        }
+        $sql = rtrim($sql, ",");
+        $sql .= " WHERE ";
+        foreach ($where as $columnName => $columnValue) {
+            $sql .= '`' . $columnName . '` = "' . self::getConnection()->escape_string($columnValue) . '" AND ';
+        }
+        $sql = rtrim($sql, " AND ");
+        return self::query($sql);
     }
 }

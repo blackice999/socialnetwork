@@ -15,84 +15,83 @@
 include "config.php";
 include "menu.php";
 
-
 if (!isset($_SESSION['userId'])) {
-?>
-<div class="row">
-    <div class="large-6 columns float-right">
-        <h2> Login</h2>
-        <form method="post" action="login.php">
-            <label>
-                Alias
-                <input type="text" name="alias">
-            </label>
-            <label>
-                Password
-                <input type="password" name="password">
-            </label>
+    ?>
+    <div class="row">
+        <div class="large-6 columns float-right">
+            <h2> Login</h2>
+            <form method="post" action="login.php">
+                <label>
+                    Alias
+                    <input type="text" name="alias">
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password">
+                </label>
 
-            <input type="submit" class="button" value="Login" name="login">
-        </form>
+                <input type="submit" class="button" value="Login" name="login">
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="large-6 columns">
-        <h2> Register</h2>
-        <form method="post" action="register.php">
-            <label>
-                Name
-                <input type="text" name="name">
-            </label>
+    <div class="row">
+        <div class="large-6 columns">
+            <h2> Register</h2>
+            <form method="post" action="register.php">
+                <label>
+                    Name
+                    <input type="text" name="name">
+                </label>
 
-            <label>
-                Alias
-                <input type="text" name="alias">
-            </label>
+                <label>
+                    Alias
+                    <input type="text" name="alias">
+                </label>
 
-            <label>
-                Email
-                <input type="text" name="email">
-            </label>
+                <label>
+                    Email
+                    <input type="text" name="email">
+                </label>
 
-            <label>
-                Telephone number
-                <input type="text" name="telephone">
-            </label>
+                <label>
+                    Telephone number
+                    <input type="text" name="telephone">
+                </label>
 
-            <label>
-                Date of birth
-                <input type="text" name="date_of_birth">
-            </label>
+                <label>
+                    Date of birth
+                    <input type="text" name="date_of_birth">
+                </label>
 
-            <label>
-                Address
-                <input type="text" name="address">
-            </label>
+                <label>
+                    Address
+                    <input type="text" name="address">
+                </label>
 
-            <label>
-                Gender
-                <select name="gender">
-                    <option value="Masculin">Male</option>
-                    <option value="Feminin">Female</option>
-                </select>
-            </label>
+                <label>
+                    Gender
+                    <select name="gender">
+                        <option value="Masculin">Male</option>
+                        <option value="Feminin">Female</option>
+                    </select>
+                </label>
 
-            <label>
-                Password
-                <input type="password" name="password">
-            </label>
+                <label>
+                    Password
+                    <input type="password" name="password">
+                </label>
 
-            <label>
-                Confirm password
-                <input type="password" name="confirm_password">
-            </label>
+                <label>
+                    Confirm password
+                    <input type="password" name="confirm_password">
+                </label>
 
-            <input type="submit" class="button" value="Register" name="register">
-        </form>
+                <input type="submit" class="button" value="Register" name="register">
+            </form>
 
+        </div>
     </div>
-</div>
 
 <?php } else { ?>
 

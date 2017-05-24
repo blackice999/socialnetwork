@@ -12,9 +12,9 @@ namespace Model;
 class UtilizatorNrTelefonModel
 {
 
-    public static function loadById(string $tableName, array $data)
+    public static function loadByUserId(int $userId)
     {
-        return Mysql::getOne($tableName, $data);
+        return Mysql::getOne("snUtilizator_nr_telefon", ['id_utilizator' => $userId]);
     }
 
     public static function loadByName(string $tableName, array $data)
@@ -40,5 +40,10 @@ class UtilizatorNrTelefonModel
         } catch (NoResultsException $e) {
             return false;
         }
+    }
+
+    public static function update(array $data, array $where)
+    {
+        return Mysql::update("snUtilizator_nr_telefon", $data, $where);
     }
 }

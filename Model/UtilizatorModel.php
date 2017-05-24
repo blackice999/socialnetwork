@@ -56,4 +56,9 @@ class UtilizatorModel
         }
     }
 
+    public static function update(array $data, array $where)
+    {
+        return Mysql::update("snUtilizator", $data, $where);
+    }
+
 }
