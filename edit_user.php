@@ -38,7 +38,7 @@ if (isset($_POST['edit'])) {
         $errors[] = "Telephone number is not valid";
     }
 
-    if(empty($dateOfBirth) || strlen($dateOfBirth) < 10) {
+    if (empty($dateOfBirth) || strlen($dateOfBirth) < 10) {
         $errors[] = "Date is not valid";
     }
 
@@ -63,6 +63,22 @@ if (isset($_POST['edit'])) {
 }
 ?>
 <div class="row">
+
+    <div class="large-6 columns">
+        <h2> Your informations</h2>
+        <img src="https://www.placehold.it/100x150"/>
+
+        <h3>Your friends</h3>
+
+        <?php
+        $prieteniModel = \Model\PrieteniModel::getAllFriendsByUserId($_SESSION['userId']);
+        echo "<pre>";
+        foreach ($prieteniModel as $prieten) {
+            $userFriendModel = \Model\UtilizatorModel::loadById($prieten['id_prieten']);
+            echo $userFriendModel['nume'] . "<br />";
+        }
+        ?>
+    </div>
     <div class="large-6 columns">
         <h2> Edit data</h2>
         <form method="post" action="edit_user.php">
