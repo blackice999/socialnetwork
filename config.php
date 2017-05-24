@@ -16,6 +16,7 @@ include "Model/UtilizatorNrTelefonModel.php";
 include "Model/UtilizatorDatePersonaleModel.php";
 include "Model/ArticleModel.php";
 include "Model/PrieteniModel.php";
+include "Model/CategorieModel.php";
 
 define("DB_HOST", "85.204.241.125");
 define("DB_USERNAME", "sinfl-orban-adam");

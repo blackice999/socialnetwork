@@ -111,8 +111,9 @@ if (!isset($_SESSION['userId'])) {
             Category
             <select name="category_id">
 
-                <!--            To fill out with category data-->
-                <option value="1">Sport</option>
+                <?php foreach(\Model\CategorieModel::getAllCategories() as $category) { ?>
+                    <option value="<?php echo $category['id'];?>"><?php echo ucfirst($category['categorie']);?></option>
+                <?php }?>
             </select>
         </label>
 
