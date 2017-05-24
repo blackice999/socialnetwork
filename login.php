@@ -24,13 +24,6 @@
 
 include "menu.php";
 include "config.php";
-include "Utils/StringUtils.php";
-include "Model/Mysql.php";
-include "Model/Exceptions/QueryException.php";
-include "Model/Exceptions/NoResultsException.php";
-include "Model/Exceptions/ConnectionException.php";
-include "Model/UtilizatorModel.php";
-include "Model/UtilizatorDatePersonaleModel.php";
 
 $errors = [];
 

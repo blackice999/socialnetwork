@@ -7,12 +7,6 @@
  */
 
 include "config.php";
-include "Utils/StringUtils.php";
-include "Model/Mysql.php";
-include "Model/Exceptions/QueryException.php";
-include "Model/Exceptions/NoResultsException.php";
-include "Model/Exceptions/ConnectionException.php";
-include "Model/ArticleModel.php";
 
 $errors = [];
 if(isset($_POST['new_article'])) {
