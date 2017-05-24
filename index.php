@@ -12,10 +12,8 @@
 
 <?php
 
-include "menu.php";
 include "config.php";
-include "Model/Mysql.php";
-include "Model/ArticleModel.php";
+include "menu.php";
 
 
 if (!isset($_SESSION['userId'])) {
@@ -98,6 +96,13 @@ if (!isset($_SESSION['userId'])) {
 </body>
 </html>
 <?php } else { ?>
+
+    <?php
+    $user = \Model\UtilizatorModel::loadById($_SESSION['userId']);
+    $userName = $user['nume'];
+    ?>
+
+    <h3> Hello <?php echo $userName; ?></h3>
     <h2> Add a new article</h2>
     <form method="post" action="article.php">
         <label>
